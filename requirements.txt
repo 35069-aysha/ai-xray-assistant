@@ -1,5 +1,5 @@
 streamlit
-tensorflow
-numpy
+tensorflow==2.19.1
+numpy<2
 Pillow
 matplotlib
