@@ -35,24 +35,24 @@ st.set_page_config(
     layout="wide",
 )
 
-# Hide Streamlit hosting controls where supported
+# Hide Streamlit controls where supported
 st.markdown("""
 <style>
+#MainMenu {
+    display: none !important;
+}
+
 footer {
     display: none !important;
-    visibility: hidden !important;
 }
 
-[data-testid="stToolbar"] {
-    display: none !important;
-}
-
+[data-testid="stToolbar"],
+[data-testid="stDecoration"],
+[data-testid="stStatusWidget"],
+[data-testid="stHeaderActionElements"],
 [data-testid="stAppDeployButton"] {
     display: none !important;
-}
-
-[data-testid="stHeaderActionElements"] {
-    display: none !important;
+    visibility: hidden !important;
 }
 
 header[data-testid="stHeader"] {
