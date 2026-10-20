@@ -35,6 +35,25 @@ st.set_page_config(
     layout="wide",
 )
 
+# Optional visual cleanup for the hosted web interface.
+# Note: Streamlit may change these CSS selectors between versions.
+st.markdown(
+    """
+    <style>
+    /* Hide the Streamlit footer and deploy badge where supported. */
+    footer { visibility: hidden; height: 0; }
+    .stDeployButton, [data-testid="stAppDeployButton"],
+    .viewerBadge_container__1QSob { display: none !important; }
+
+    /* Hide Streamlit's top toolbar (including the GitHub/menu icons).
+       This only changes the appearance of the page. */
+    header[data-testid="stHeader"] { display: none !important; }
+    [data-testid="stToolbar"] { display: none !important; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.title("🩻 AI-Based Universal X-ray Analysis Assistant")
 st.caption(
     "Experimental X-ray classification and explainability "
